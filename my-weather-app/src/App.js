@@ -1,5 +1,5 @@
 import './App.css';
-
+import Weather from './components/weather';
 import React, {useEffect, useState} from 'react';
 
 
@@ -29,7 +29,11 @@ export default function App() {
 
   return (
     <div className="App">
-
+    {(typeof data.main != 'undefined') ? (
+      <Weather weatherData={data} />
+    ) : (
+      <div></div>
+    )}
     </div>
   );
 }
